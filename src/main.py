@@ -13,7 +13,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 2. Add the project root to the system path to fix module imports
 sys.path.append(PROJECT_ROOT)
-# -------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 
 # Now imports should work regardless of execution location (as long as the root is found)
 from src.data_pipeline import create_master_data
