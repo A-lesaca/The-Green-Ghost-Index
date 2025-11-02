@@ -14,7 +14,7 @@ The **Green Ghost Index (GGI)** is a data-driven initiative to combat corruption
 
 * **Model Performance Summary:** A machine learning-driven risk score that forecasts the probability of a future project becoming a "ghost" based on the host country's governance profile and the project's financial characteristics.
 * **Live Projection Corruption Forecast:** Provides a trend diagnosis through metrics such as CPI score,WJP Rule Law.
-*  **Green Ghost Index Hotlis:** Describes set of countries that are at risk of becoming a "Green Ghost" which is flagged by the satelite and provided by up to date data.
+*  **Green Ghost Index Hotlist:** Describes set of countries that are at risk of becoming a "Green Ghost" which is flagged by the satelite and provided by up to date data.
 
 ---
 
