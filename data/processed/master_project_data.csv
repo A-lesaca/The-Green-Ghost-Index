@@ -1,0 +1,47 @@
+project_id,project_name,country,latitude,longitude,total_loan_usd,start_year,funded_capacity_mw,project_type,cpi_score,rule_of_law_score,is_ghost,audit_status,gem_status
+,Ayno Mena solar farm,Afghanistan,31.6536,65.7139,,,33.0,PV,16,,,,cancelled - inferred 4 y
+,Balkh solar farm,Afghanistan,36.7144,67.121,,,40.0,PV,16,,,,cancelled - inferred 4 y
+,Bamian Bamyan solar project,Afghanistan,34.8014,67.8346,,2024.0,1.6,Assumed PV,16,,,,operating
+,Herat wind farm,Afghanistan,34.3529,62.204,,,200.0,Onshore,16,,,,announced
+,Gaibandha Beximco solar farm,Bangladesh,25.3288,89.5417,300.0,2023.0,200.0,PV,24,,,,operating
+,Habiganj Sadar Upazila solar project,Bangladesh,24.2632,91.378,300.0,2021.0,3.6,Assumed PV,24,,,,operating
+,Khurushkul wind farm,Bangladesh,21.4347,92.0053,300.0,2023.0,60.0,Onshore,24,,,,operating
+,Mymensingh solar farm,Bangladesh,24.75,90.41,300.0,2021.0,50.0,PV,24,,,,operating
+,Bhojpur Solar PV Project,India,23.3615,77.5619,212.5,2017.0,5.0,Assumed PV,39,,,,operating
+,Bitta solar farm,India,23.63,69.23,212.5,2012.0,40.0,PV,39,,,,operating
+,Charanka solar farm,India,23.88,71.18,212.5,2012.0,790.0,PV,39,,,,operating
+,Kadra wind farm,India,14.9961,74.3406,212.5,2018.0,16.5,Onshore,39,,,,operating
+,Muppandal wind farm,India,8.26,77.55,212.5,1986.0,1500.0,Onshore,39,,,,operating
+,Pavagada solar farm,India,14.18,77.3,212.5,2019.0,2050.0,PV,39,,,,operating
+,Rewa Ultra Mega Solar,India,24.36,81.47,212.5,2018.0,750.0,PV,39,,,,operating
+,Kupang solar project,Indonesia,-10.1467,123.7487,,2017.0,4.1,Assumed PV,34,,,,operating
+,Lombok Tengah solar project,Indonesia,-8.7937,116.2946,,2019.0,6.5,Assumed PV,34,,,,operating
+,PLTB Jeneponto wind farm,Indonesia,-5.6667,119.6667,,2019.0,72.0,Onshore,34,,,,operating
+,PLTB Sidrap wind farm,Indonesia,-3.9114,119.8242,,2018.0,75.0,Onshore,34,,,,operating
+,Sepang solar project,Malaysia,2.7793,101.7144,,2017.0,11.5,Assumed PV,50,,,,operating
+,Seremban solar project,Malaysia,2.6357,101.9401,,2017.0,6.6,Assumed PV,50,,,,operating
+,Jhimpir wind farm,Pakistan,25.02,68.04,233.33333333333334,2016.0,550.8,Onshore,29,,,,operating
+,Quaid-e-Azam solar farm,Pakistan,29.32,71.82,233.33333333333334,2016.0,400.0,PV,29,,,,operating
+,Aklan 1 wind farm,Philippines,11.666,122.2595,326.9,2026.0,75.6,Onshore,34,,,,pre-construction
+,Alabat Wind Power Project,Philippines,14.1694,122.0004,326.9,2025.0,62.4,Onshore,34,,,,pre-construction
+,Burgos wind farm,Philippines,18.5217,120.6728,326.9,2014.0,150.0,Onshore,34,,,,operating
+,Cadiz solar farm,Philippines,10.96,123.27,326.9,2016.0,132.5,PV,34,,,,operating
+,Calatagan solar farm,Philippines,13.84,120.65,326.9,2016.0,63.3,PV,34,,,,operating
+,Caparispisan wind farm,Philippines,18.5986,120.7303,326.9,2014.0,81.0,Onshore,34,,,,operating
+,Romblon wind farm,Philippines,12.578,122.27,326.9,2019.0,0.2,Onshore,34,,,,operating
+,San Carlos Solar Energy (SaCaSol) solar farm,Philippines,10.49,123.41,326.9,2014.0,45.0,PV,34,,,,operating
+,Constellar Venues at Singapore EXPO solar project,Singapore,1.3379,103.9625,,2023.0,9.7,PV,83,,,,operating
+,Mannar wind farm,Sri Lanka,8.91,79.83,,2020.0,100.0,Onshore,34,,,,operating
+,Sittrakala solar farm,Sri Lanka,8.5,80.05,,2017.0,10.0,PV,34,,,,operating
+,Welikanda solar farm,Sri Lanka,7.9,81.2,,2017.0,10.0,PV,34,,,,operating
+,Chaiyaphum wind farm,Thailand,15.82,101.7,95.7,2016.0,83.0,Onshore,35,,,,operating
+,Huai Bong wind farm,Thailand,14.86,101.43,95.7,2012.0,103.5,Onshore,35,,,,operating
+,Lopburi solar farm,Thailand,14.97,100.83,95.7,2013.0,84.0,PV,35,,,,operating
+,Theppana wind farm,Thailand,15.93,101.69,95.7,2011.0,6.9,Onshore,35,,,,operating
+,Bac Lieu wind farm,Vietnam,9.18,105.7,,2013.0,470.2,Offshore,41,,,,operating
+,Bim solar farm,Vietnam,11.45,109.02,,2019.0,250.0,PV,41,,,,operating
+,Dam Nai wind farm,Vietnam,11.66,109.05,,2018.0,40.0,Onshore,41,,,,operating
+,Dau Tieng solar farm,Vietnam,11.35,106.35,,2019.0,420.0,PV,41,,,,operating
+,Phu Quoc wind farm,Vietnam,10.22,103.97,,2017.0,0.8,Onshore,41,,,,operating
+,Phuoc Huu solar farm,Vietnam,11.49,109.0,,2019.0,30.0,PV,41,,,,operating
+,Trung Nam wind farm,Vietnam,11.69,109.05,,2019.0,151.9,Onshore,41,,,,operating
