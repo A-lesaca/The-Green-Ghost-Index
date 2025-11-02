@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Ghost Index (GGI) Final Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- CORE TERMINAL STYLING (The Digital Seance) --- */
+        .terminal-container {
+            max-width: 650px;
+            margin: 30px auto;
+            border: 3px solid #66ff66; /* Bright Neon Green Border */
+            background-color: #030a03; /* Very Dark Green-Black background */
+            box-shadow: 0 0 40px rgba(102, 255, 102, 0.8), /* Strong green outer glow */
+                        inset 0 0 15px rgba(102, 255, 102, 0.3); /* Soft inner glow */
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #00ff00; /* Neon Green Text */
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        /* Scrying Pool Reflection Effect (Ghostly Green) */
+        .terminal-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at 70% 30%,
+                                        rgba(255, 255, 255, 0.1) 0%,
+                                        rgba(0, 200, 0, 0.15) 20%, /* Green tint */
+                                        rgba(0, 0, 0, 0.9) 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: slowGlow 8s infinite alternate,
+                        ripple 10s infinite;
+            z-index: -1;
+        }
+
+        @keyframes slowGlow {
+            from { opacity: 0.7; }
+            to { opacity: 1.0; }
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.2; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+        }
+
+        /* Standard Terminal Elements */
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #009900;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .terminal-body .prompt, .terminal-output .prompt {
+            color: #99ff99; /* Light Green for prompts */
+            margin-bottom: 10px;
+        }
+        /* Whispering Prompt Shimmer */
+        #whispering-text {
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 0.9em;
+            color: #00dd00;
+        }
+        .input-group input {
+            width: 90%;
+            padding: 5px;
+            background-color: #000;
+            border: 1px solid #009900;
+            color: #fff;
+            font-family: inherit;
+        }
+        #predict-button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        #predict-button:hover {
+            background-color: #ffff00;
+        }
+        .terminal-output {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #009900;
+            z-index: 1;
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        /* --- METER STYLING (3. The "Ghost Probability Meter") --- */
+        .meter-container {
+            margin-top: 15px;
+            border: 1px solid #009900;
+            padding: 10px;
+        }
+        .meter-label {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .meter-bar-container {
+            height: 25px;
+            background-color: #333;
+            border: 1px solid #00ff00;
+            overflow: hidden;
+        }
+        .meter-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 1.5s ease-out;
+        }
+
+        /* --- ORACLE'S FINAL SAY: CRITICAL WARNING STYLING --- */
+        .commentary.critical-warning {
+            background-color: #2e0d0d;
+            color: #ff0000;
+            font-weight: bold;
+            border: 3px solid #ff0000;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1em;
+            animation: flashBorder 0.8s infinite alternate;
+        }
+
+        @keyframes flashBorder {
+            from { border-color: #ff0000; }
+            to { border-color: #880000; }
+        }
+
+        /* New styling for impact messages */
+        .impact-data {
+            font-size: 0.9em;
+            color: #99ff99; /* Light green data display */
+            margin-top: 10px;
+            padding: 5px 0;
+            border-top: 1px dashed #009900;
+            border-bottom: 1px dashed #009900;
+        }
+        .impact-warning {
+            color: #ff9900; /* Amber for high-stakes numbers */
+        }
+
+        /* NEW HACKATHON FEATURE STYLING */
+        .oracle-prescription {
+            margin-top: 15px;
+            padding: 10px;
+            border: 2px solid #00ffff; /* Cyan for "solution" */
+            background-color: #021a1a;
+            font-weight: bold;
+        }
+
+        /* --- SCANNING VISUAL (2. The "Scanning" Visual) --- */
+        .scanning-visual {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .satellite-dish-loader {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #00ff00;
+            border-radius: 50%;
+            border-top: 4px solid transparent;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+
+    <header class="text-center pb-6 border-b border-gray-300">
+        <h1 class="text-4xl font-extrabold text-green-700">The "Green Ghost" Index (GGI)</h1>
+        <p class="text-xl text-gray-600">Predicting Climate Finance Corruption in Asia</p>
+        <p class="text-sm text-gray-400 mt-2">Report Generated: {{ GENERATION_DATE }}</p>
+    </header>
+
+    <section class="mt-8">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 text-center">Live Project Corruption Forecast</h2>
+
+        <div id="predictor-module" class="terminal-container">
+            <div class="terminal-header">
+                <span class="title">🔮 LIVE GHOST FORECAST TERMINAL</span>
+                <span class="status">:: MODEL ONLINE ::</span>
+            </div>
+
+            <form id="prediction-form" class="terminal-body">
+                <p class="prompt">> <span id="whispering-text"></span></p>
+
+                <div class="input-group">
+                    <label for="country-cpi">CPI Score (0-100, 100 is best):</label>
+                    <input type="number" id="country-cpi" min="0" max="100" value="35" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="project-value">Project Value (Millions USD):</label>
+                    <input type="number" id="project-value" min="1" value="80" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="wjp-score">WJP Rule of Law (0-1.0, 1.0 is best):</label>
+                    <input type="number" id="wjp-score" min="0.01" max="1.0" step="0.01" value="0.45" required>
+                </div>
+
+                <button type="submit" id="predict-button">
+                    ⚡ CONSULT THE CRYSTAL BALL AUDIT ⚡
+                </button>
+            </form>
+
+            <div id="result-display" class="terminal-output hidden">
+                <p class="prompt">> Scrying session initiated. Connecting to the Matrix...</p>
+
+                <div class="scanning-visual">
+                    <div class="satellite-dish-loader"></div>
+                    <p>ANALYZING GOVERNANCE ECHOES...</p>
+                </div>
+
+                <div id="final-result-section" class="final-result hidden">
+                    <h3>--- GGI FORECAST RESULT ---</h3>
+
+                    <div class="meter-container">
+                        <div class="meter-label">GHOST PROBABILITY (GGI): <span id="probability-text">--</span>%</div>
+                        <div class="meter-bar-container">
+                            <div id="meter-bar" class="meter-bar"></div>
+                        </div>
+                    </div>
+
+                    <div id="capacity-impact" class="impact-data">
+                    </div>
+
+                    <div id="oracle-prescription-result" class="oracle-prescription hidden">
+                        <p>🔮 **ORACLE'S GOVERNANCE PRESCRIPTION** 🔮</p>
+                        <p id="oracle-text"></p>
+                    </div>
+
+                    <p id="commentary" class="commentary"></p>
+                    <p class="data-stream-log">LOG >> Prediction successful. The future has been revealed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-12 max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <h2 class="text-2xl font-semibold text-gray-700 border-b pb-2 mb-4">Model Performance Summary</h2>
+        <div class="flex justify-around text-center mb-6">
+            <div>
+                <p class="text-5xl font-extrabold text-blue-600">{{ ROC_AUC_SCORE }}</p>
+                <p class="text-gray-500">ROC AUC Score</p>
+            </div>
+            <div>
+                <p class="text-5xl font-extrabold text-gray-700">XGBoost</p>
+                <p class="text-gray-500">Model Used</p>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Top 5 Feature Importances</h3>
+        <ul class="space-y-1 p-4 bg-gray-50 border rounded-lg">
+            {{ FEATURE_IMPORTANCE_LIST_HTML }}
+        </ul>
+    </section>
+
+    <section class="mt-12 max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <h2 class="text-2xl font-semibold text-gray-700 border-b pb-2 mb-4">Green Ghost Index Hotlist (Top 5 Riskiest Projects)</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Project ID</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Project Name</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Country</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">GGI Risk Score</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Satellite Audit Status</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {{ RISKY_PROJECTS_ROWS_HTML }}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        // Set weights and thresholds as constants
+        const CPI_WEIGHT = 0.45;
+        const WJP_WEIGHT = 0.35;
+        const PROJECT_VALUE_WEIGHT = 0.20;
+        const GGI_TARGET_RISK = 30.0; // Target risk level to be 'Safe'
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Whispering Prompt (Typewriter Effect) Logic) ---
+            const promptText = "Enter Project Parameters for Real-Time GGI Prediction";
+            const whisperingElement = document.getElementById('whispering-text');
+
+            function typeWriter(text, element, delay = 50) {
+                let i = 0;
+                element.textContent = '';
+                const interval = setInterval(() => {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, delay);
+            }
+
+            typeWriter(promptText, whisperingElement);
+
+            // --- 2. Main Prediction Event Listener ---
+            document.getElementById('prediction-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // 1. Get Input Values
+                const cpi_score = parseFloat(document.getElementById('country-cpi').value);
+                const project_value_millions = parseFloat(document.getElementById('project-value').value);
+                const wjp_score = parseFloat(document.getElementById('wjp-score').value);
+
+                // Get display elements
+                const resultDisplay = document.getElementById('result-display');
+                const scanningVisual = resultDisplay.querySelector('.scanning-visual');
+                const finalResult = resultDisplay.querySelector('.final-result');
+                const commentaryElement = document.getElementById('commentary');
+                const impactElement = document.getElementById('capacity-impact');
+                const oraclePrescription = document.getElementById('oracle-prescription-result');
+                const oracleText = document.getElementById('oracle-text');
+
+
+                // Clear previous Oracle warning class
+                commentaryElement.classList.remove('critical-warning');
+                oraclePrescription.classList.add('hidden'); // Hide Oracle by default
+
+                // Reset and show initial output view
+                resultDisplay.classList.remove('hidden');
+                finalResult.classList.add('hidden');
+                scanningVisual.classList.remove('hidden');
+
+                // Simulate the "Scanning" Delay (2.5 seconds)
+                setTimeout(() => {
+
+                    // Hide scanner, show final result
+                    scanningVisual.classList.add('hidden');
+                    finalResult.classList.remove('hidden');
+
+                    // 3. RUN THE CORE PREDICTION LOGIC (Now deterministic/no noise)
+                    const prediction = calculateGGI(cpi_score, project_value_millions, wjp_score);
+                    const prob = prediction.ggi_probability;
+
+                    // 4. Update the HTML Elements and apply Oracle's Say
+                    const meterBar = document.getElementById('meter-bar');
+                    const probabilityText = document.getElementById('probability-text');
+
+                    // --- IMPACT CALCULATION ---
+                    const capacity_factor = 10;
+                    const funded_capacity_MW = project_value_millions * capacity_factor;
+                    const potential_capacity_loss = (funded_capacity_MW * prob / 100).toFixed(1);
+
+                    // Set Meter Bar Width and Color
+                    meterBar.style.width = prob + '%';
+                    let barColor;
+                    if (prob < 20) {
+                        barColor = '#00ff00';
+                    } else if (prob < 50) {
+                        barColor = '#ffff00';
+                    } else if (prob < 80) {
+                        barColor = '#ff9900';
+                    } else {
+                        barColor = '#ff0000';
+                    }
+                    meterBar.style.backgroundColor = barColor;
+
+                    // Apply Oracle's Final Say
+                    if (prob >= 80) {
+                        commentaryElement.textContent = ">>> CRITICAL WARNING: PROJECT IMPENDING GHOSTHOOD. ABORT FINANCING <<<";
+                        commentaryElement.classList.add('critical-warning');
+                    } else {
+                        commentaryElement.textContent = prediction.commentary;
+                        commentaryElement.classList.remove('critical-warning');
+                    }
+
+                    probabilityText.textContent = prob.toFixed(1);
+
+                    // --- DISPLAY THE IMPACT ---
+                    impactElement.innerHTML = `
+                        <p>FUNDED CAPACITY: ${funded_capacity_MW.toFixed(0)} MW</p>
+                        <p class="impact-warning">POTENTIAL CLEAN ENERGY LOSS:
+                        <span style="color: ${prob >= 50 ? '#ff0000' : '#00ff00'}; font-weight: bold;">${potential_capacity_loss} MW</span>
+                        </p>
+                    `;
+
+                    // --- HACKATHON FEATURE: CRYSTAL BALL MITIGATION ORACLE ---
+                    if (prob > GGI_TARGET_RISK) {
+                        const requiredWjp = calculateWJPImprovement(cpi_score, project_value_millions);
+
+                        if (requiredWjp >= 1.0) {
+                             oracleText.textContent = `CRITICAL: Mitigation is impossible via WJP alone. The current CPI (${cpi_score.toFixed(0)}) and Project Size ($${project_value_millions.toFixed(0)}M) require a WJP score greater than 1.0. Consider reducing project value or improving CPI.`;
+                        } else {
+                             oracleText.textContent = `To reach a 'Safe' GGI of <${GGI_TARGET_RISK.toFixed(0)}%, the WJP Rule of Law score must improve from ${wjp_score.toFixed(2)} to **${requiredWjp.toFixed(2)}**`;
+                        }
+
+                        oraclePrescription.classList.remove('hidden');
+                    } else {
+                         oracleText.textContent = `GGI is already 'Safe' (<${GGI_TARGET_RISK.toFixed(0)}%). No governance prescription required.`;
+                         oraclePrescription.classList.remove('hidden');
+                    }
+
+
+                }, 2500);
+            });
+
+            // --- CORE GGI PREDICTION FUNCTION (Fixed: Removed Noise) ---
+            function calculateGGI(cpi, projectValue, wjp) {
+                const cpiRisk = (100 - cpi) / 100;
+                const wjpRisk = 1.0 - wjp;
+                const projectSizeFactor = Math.log10(Math.max(projectValue, 1)) / 3;
+
+                // Core deterministic calculation
+                const baseGgiScore = (cpiRisk * CPI_WEIGHT) + (wjpRisk * WJP_WEIGHT) + (projectSizeFactor * PROJECT_VALUE_WEIGHT);
+
+                // Convert to percentage. NO RANDOM NOISE.
+                let probabilityPercent = baseGgiScore * 100;
+                probabilityPercent = Math.max(0.0, Math.min(100.0, probabilityPercent));
+
+                let commentary;
+                if (probabilityPercent < 20) {
+                    commentary = "LOW RISK: Solid Ground. The governance metrics suggest minimal risk of funds disappearing. Proceed with confidence.";
+                } else if (probabilityPercent < 50) {
+                    commentary = "CAUTION: Faint Ectoplasm Detected. Baseline risk is moderate. Increased monitoring of satellite imagery is recommended.";
+                } else if (probabilityPercent < 80) {
+                    commentary = "HIGH RISK: Ghost Protocol Initiated. The combination of weak governance and project scale suggests a high probability of project failure/diversion.";
+                } else {
+                    commentary = "CRITICAL WARNING - Ghost likelihood detected.";
+                }
+
+                return {
+                    ggi_probability: probabilityPercent,
+                    commentary: commentary,
+                };
+            }
+
+            // --- HACKATHON INNOVATION: ORACLE'S GOVERNANCE PRESCRIPTION ---
+            /* * Calculates the target WJP score required to bring GGI risk below the GGI_TARGET_RISK.
+             * GGI Formula: Score * 100 = (cpiRisk * 0.45) + ((1 - WJP_NEW) * 0.35) + (projectSizeFactor * 0.20) * 100
+             * Solving for WJP_NEW when Score * 100 = GGI_TARGET_RISK:
+             * * GGI_TARGET_RISK = (CPI_TERM) + ((1 - WJP_NEW) * WJP_WEIGHT * 100) + (PV_TERM)
+             * WJP_NEW = 1 - ( (GGI_TARGET_RISK - CPI_TERM - PV_TERM) / (WJP_WEIGHT * 100) )
+             */
+            function calculateWJPImprovement(cpi, projectValue) {
+                const cpiRisk = (100 - cpi) / 100;
+                const projectSizeFactor = Math.log10(Math.max(projectValue, 1)) / 3;
+
+                // Calculate the fixed contributions (CPI and Project Value)
+                const cpiTerm = cpiRisk * CPI_WEIGHT * 100;
+                const pvTerm = projectSizeFactor * PROJECT_VALUE_WEIGHT * 100;
+
+                // Calculate the required contribution from the WJP term
+                const requiredWJPTerm = GGI_TARGET_RISK - cpiTerm - pvTerm;
+
+                // If requiredWJPTerm is negative, it means the risk is already below target without WJP's contribution, so WJP can be 0.01 (min).
+                if (requiredWJPTerm <= 0) {
+                    return 0.01;
+                }
+
+                // Solve for the required WJP Risk (WJP_RISK = 1 - WJP_SCORE)
+                // WJP_RISK * WJP_WEIGHT * 100 = requiredWJPTerm
+                const requiredWJPRisk = requiredWJPTerm / (WJP_WEIGHT * 100);
+
+                // Solve for the required WJP Score
+                let requiredWJPScore = 1.0 - requiredWJPRisk;
+
+                // Ensure the score is within valid WJP bounds (0.01 to 1.0)
+                requiredWJPScore = Math.max(0.01, requiredWJPScore);
+                requiredWJPScore = Math.min(1.0, requiredWJPScore);
+
+                return requiredWJPScore;
+            }
+        });
+    </script>
+</body>
+</html>

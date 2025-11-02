@@ -1,0 +1,324 @@
+[
+    {
+        "project_name":"Rewa Ultra Mega Solar",
+        "country":"India",
+        "latitude":24.36,
+        "longitude":81.47,
+        "ghost_risk_score":0.99
+    },
+    {
+        "project_name":"Charanka solar farm",
+        "country":"India",
+        "latitude":23.88,
+        "longitude":71.18,
+        "ghost_risk_score":0.99
+    },
+    {
+        "project_name":"Pavagada solar farm",
+        "country":"India",
+        "latitude":14.18,
+        "longitude":77.3,
+        "ghost_risk_score":0.98
+    },
+    {
+        "project_name":"Bim solar farm",
+        "country":"Vietnam",
+        "latitude":11.45,
+        "longitude":109.02,
+        "ghost_risk_score":0.97
+    },
+    {
+        "project_name":"Dau Tieng solar farm",
+        "country":"Vietnam",
+        "latitude":11.35,
+        "longitude":106.35,
+        "ghost_risk_score":0.97
+    },
+    {
+        "project_name":"Mannar wind farm",
+        "country":"Sri Lanka",
+        "latitude":8.91,
+        "longitude":79.83,
+        "ghost_risk_score":0.97
+    },
+    {
+        "project_name":"Gaibandha Beximco solar farm",
+        "country":"Bangladesh",
+        "latitude":25.3288,
+        "longitude":89.5417,
+        "ghost_risk_score":0.95
+    },
+    {
+        "project_name":"Habiganj Sadar Upazila solar project",
+        "country":"Bangladesh",
+        "latitude":24.2632,
+        "longitude":91.378,
+        "ghost_risk_score":0.95
+    },
+    {
+        "project_name":"Khurushkul wind farm",
+        "country":"Bangladesh",
+        "latitude":21.4347,
+        "longitude":92.0053,
+        "ghost_risk_score":0.95
+    },
+    {
+        "project_name":"Kupang solar project",
+        "country":"Indonesia",
+        "latitude":-10.1467,
+        "longitude":123.7487,
+        "ghost_risk_score":0.94
+    },
+    {
+        "project_name":"Constellar Venues at Singapore EXPO solar project",
+        "country":"Singapore",
+        "latitude":1.3379,
+        "longitude":103.9625,
+        "ghost_risk_score":0.89
+    },
+    {
+        "project_name":"Lopburi solar farm",
+        "country":"Thailand",
+        "latitude":14.97,
+        "longitude":100.83,
+        "ghost_risk_score":0.87
+    },
+    {
+        "project_name":"Jhimpir wind farm",
+        "country":"Pakistan",
+        "latitude":25.02,
+        "longitude":68.04,
+        "ghost_risk_score":0.83
+    },
+    {
+        "project_name":"Romblon wind farm",
+        "country":"Philippines",
+        "latitude":12.578,
+        "longitude":122.27,
+        "ghost_risk_score":0.82
+    },
+    {
+        "project_name":"Cadiz solar farm",
+        "country":"Philippines",
+        "latitude":10.96,
+        "longitude":123.27,
+        "ghost_risk_score":0.8
+    },
+    {
+        "project_name":"Herat wind farm",
+        "country":"Afghanistan",
+        "latitude":34.3529,
+        "longitude":62.204,
+        "ghost_risk_score":0.65
+    },
+    {
+        "project_name":"Phuoc Huu solar farm",
+        "country":"Vietnam",
+        "latitude":11.49,
+        "longitude":109.0,
+        "ghost_risk_score":0.23
+    },
+    {
+        "project_name":"Huai Bong wind farm",
+        "country":"Thailand",
+        "latitude":14.86,
+        "longitude":101.43,
+        "ghost_risk_score":0.14
+    },
+    {
+        "project_name":"Sepang solar project",
+        "country":"Malaysia",
+        "latitude":2.7793,
+        "longitude":101.7144,
+        "ghost_risk_score":0.12
+    },
+    {
+        "project_name":"Mymensingh solar farm",
+        "country":"Bangladesh",
+        "latitude":24.75,
+        "longitude":90.41,
+        "ghost_risk_score":0.1
+    },
+    {
+        "project_name":"Muppandal wind farm",
+        "country":"India",
+        "latitude":8.26,
+        "longitude":77.55,
+        "ghost_risk_score":0.08
+    },
+    {
+        "project_name":"Bhojpur Solar PV Project",
+        "country":"India",
+        "latitude":23.3615,
+        "longitude":77.5619,
+        "ghost_risk_score":0.08
+    },
+    {
+        "project_name":"Bitta solar farm",
+        "country":"India",
+        "latitude":23.63,
+        "longitude":69.23,
+        "ghost_risk_score":0.08
+    },
+    {
+        "project_name":"Kadra wind farm",
+        "country":"India",
+        "latitude":14.9961,
+        "longitude":74.3406,
+        "ghost_risk_score":0.08
+    },
+    {
+        "project_name":"Bac Lieu wind farm",
+        "country":"Vietnam",
+        "latitude":9.18,
+        "longitude":105.7,
+        "ghost_risk_score":0.07
+    },
+    {
+        "project_name":"Quaid-e-Azam solar farm",
+        "country":"Pakistan",
+        "latitude":29.32,
+        "longitude":71.82,
+        "ghost_risk_score":0.05
+    },
+    {
+        "project_name":"Chaiyaphum wind farm",
+        "country":"Thailand",
+        "latitude":15.82,
+        "longitude":101.7,
+        "ghost_risk_score":0.04
+    },
+    {
+        "project_name":"Theppana wind farm",
+        "country":"Thailand",
+        "latitude":15.93,
+        "longitude":101.69,
+        "ghost_risk_score":0.04
+    },
+    {
+        "project_name":"Lombok Tengah solar project",
+        "country":"Indonesia",
+        "latitude":-8.7937,
+        "longitude":116.2946,
+        "ghost_risk_score":0.03
+    },
+    {
+        "project_name":"Dam Nai wind farm",
+        "country":"Vietnam",
+        "latitude":11.66,
+        "longitude":109.05,
+        "ghost_risk_score":0.03
+    },
+    {
+        "project_name":"Phu Quoc wind farm",
+        "country":"Vietnam",
+        "latitude":10.22,
+        "longitude":103.97,
+        "ghost_risk_score":0.01
+    },
+    {
+        "project_name":"Ayno Mena solar farm",
+        "country":"Afghanistan",
+        "latitude":31.6536,
+        "longitude":65.7139,
+        "ghost_risk_score":0.01
+    },
+    {
+        "project_name":"Trung Nam wind farm",
+        "country":"Vietnam",
+        "latitude":11.69,
+        "longitude":109.05,
+        "ghost_risk_score":0.01
+    },
+    {
+        "project_name":"Sittrakala solar farm",
+        "country":"Sri Lanka",
+        "latitude":8.5,
+        "longitude":80.05,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Welikanda solar farm",
+        "country":"Sri Lanka",
+        "latitude":7.9,
+        "longitude":81.2,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"San Carlos Solar Energy (SaCaSol) solar farm",
+        "country":"Philippines",
+        "latitude":10.49,
+        "longitude":123.41,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Caparispisan wind farm",
+        "country":"Philippines",
+        "latitude":18.5986,
+        "longitude":120.7303,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Calatagan solar farm",
+        "country":"Philippines",
+        "latitude":13.84,
+        "longitude":120.65,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Burgos wind farm",
+        "country":"Philippines",
+        "latitude":18.5217,
+        "longitude":120.6728,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Alabat Wind Power Project",
+        "country":"Philippines",
+        "latitude":14.1694,
+        "longitude":122.0004,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Balkh solar farm",
+        "country":"Afghanistan",
+        "latitude":36.7144,
+        "longitude":67.121,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Seremban solar project",
+        "country":"Malaysia",
+        "latitude":2.6357,
+        "longitude":101.9401,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"PLTB Sidrap wind farm",
+        "country":"Indonesia",
+        "latitude":-3.9114,
+        "longitude":119.8242,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"PLTB Jeneponto wind farm",
+        "country":"Indonesia",
+        "latitude":-5.6667,
+        "longitude":119.6667,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Bamian Bamyan solar project",
+        "country":"Afghanistan",
+        "latitude":34.8014,
+        "longitude":67.8346,
+        "ghost_risk_score":0.0
+    },
+    {
+        "project_name":"Aklan 1 wind farm",
+        "country":"Philippines",
+        "latitude":11.666,
+        "longitude":122.2595,
+        "ghost_risk_score":0.0
+    }
+]
